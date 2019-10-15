@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public static ScoreManager instance;
-    public TextMeshPro text;
+    public Text text;
     int score;
 
     void Start()
@@ -18,9 +18,14 @@ public class ScoreManager : MonoBehaviour
         }    
     }
 
-    public void ChangeScore(int coinValue)
+    public void ChangeScore(int value)
     {
-        score += coinValue;
-        text.text = "X" + score.ToString();
+        score = score + value;
+        Debug.Log(score);
+        text.text = "Collected: " + score.ToString() + "/4";
+        if (score == 4)
+        {
+            Time.timeScale = 0f; 
+        }
     }
 }
