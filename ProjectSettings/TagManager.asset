@@ -18,8 +18,8 @@ TagManager:
   - player
   - coin
   - Text
-  - 
-  - 
+  - Background
+  - obstacle
   - 
   - 
   - 
@@ -40,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: background
+    uniqueID: 502978313
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

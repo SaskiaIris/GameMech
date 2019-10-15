@@ -108,12 +108,13 @@
      <Compile Include="Assets\Cinemachine\Timeline\CinemachineMixer.cs" />
      <Compile Include="Assets\Cinemachine\Timeline\CinemachineShot.cs" />
      <Compile Include="Assets\Cinemachine\Timeline\CinemachineTrack.cs" />
-     <Compile Include="Assets\pickup.cs" />
-     <Compile Include="Assets\PlayerMovement.cs" />
-     <Compile Include="Assets\PlayerMovement2.cs" />
+     <Compile Include="Assets\enemyGFX.cs" />
      <Compile Include="Assets\Script\CharacterController2D.cs" />
      <Compile Include="Assets\Script\Coin.cs" />
      <Compile Include="Assets\Script\Controller.cs" />
+     <Compile Include="Assets\Script\pickup.cs" />
+     <Compile Include="Assets\Script\PlayerMovement.cs" />
+     <Compile Include="Assets\Script\PlayerMovement2.cs" />
      <Compile Include="Assets\Script\ScoreManager.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
@@ -344,6 +345,9 @@
  </Reference>
  <Reference Include="UnityEngine.XRModule">
  <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+ <HintPath>D:/Github/gamemech/gamemech/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>D:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -699,6 +703,20 @@
  <Reference Include="Boo.Lang">
  <HintPath>D:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="AstarPathfindingProject.csproj">
+      <Project>{667CF15B-C6D6-5F01-1E1B-6BCF4A31FC4C}</Project>
+      <Name>AstarPathfindingProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="PackageToolsEditor.csproj">
+      <Project>{B48A26BC-9282-FF90-2270-B164732C1E24}</Project>
+      <Name>PackageToolsEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
+      <Project>{67EC3167-F056-1E66-966C-FEAAD9C11BA8}</Project>
+      <Name>AstarPathfindingProjectEditor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
