@@ -25,7 +25,7 @@ public class ScoreManager : MonoBehaviour
         Debug.Log(score);
         text.text = "Collected: " + score.ToString() + "/4";
         Time.timeScale = 1f;
-        if (score == 4)
+        if (score >= 4)
         {
             Time.timeScale = 0f; 
         }
