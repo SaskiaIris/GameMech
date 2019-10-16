@@ -54,9 +54,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
-       //if(other.gameObject.CompareTag("Enemy"))
-       // {
-       //     Destroy(this.gameObject);
-       // }
+       if(other.gameObject.CompareTag("Enemy"))
+       {
+          Destroy(this.gameObject);
+            Time.timeScale = 0f;
+       }
     }
 }
