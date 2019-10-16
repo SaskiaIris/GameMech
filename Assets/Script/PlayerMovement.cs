@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public CharacterController2D controller;
+    public Animator animator;
 
     public float runSpeed = 40f;
 
@@ -21,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
         if (Input.GetKeyDown(KeyCode.X) && playeractive == true)
         {
             playeractive = false;
@@ -35,8 +39,14 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonDown("Jump"))
             {
                 jump = true;
+                animator.SetBool("IsJumping", true);
             }
         } 
+    }
+
+    public void OnLand()
+    {
+        animator.SetBool("IsJumping", false);
     }
 
     private void FixedUpdate()
@@ -56,8 +66,13 @@ public class PlayerMovement : MonoBehaviour
         }
        if(other.gameObject.CompareTag("Enemy"))
        {
+            Debug.Log("there be collision");
           Destroy(this.gameObject);
             Time.timeScale = 0f;
        }
+        if (other.gameObject.CompareTag("Housetut"))
+        {
+            SceneManager.LoadScene(sceneName: "First level");
+        }
     }
 }
