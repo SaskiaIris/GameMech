@@ -12,6 +12,7 @@ TagManager:
   - obstacle
   - GameOver
   - Player2
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -17,8 +17,7 @@ public class Cherry : MonoBehaviour
         if (hitInfo.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
-            Destroy(hitInfo.gameObject);
-            MonsterManager.instance.ChangeScore(1);
+            
         }
         if (hitInfo.gameObject.CompareTag("obstacle"))
         {

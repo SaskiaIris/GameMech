@@ -7,6 +7,7 @@ public class PlayerMovement2 : MonoBehaviour
 {
     // Start is called before the first frame update
     public CharacterController2D controller;
+    public Animator animator;
 
     public float runSpeed = 40f;
 
@@ -22,11 +23,14 @@ public class PlayerMovement2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetFloat("Speed2", Mathf.Abs(horizontalMove));
+
         if (Input.GetKeyDown(KeyCode.X) && playeractive == false)
         {
             playeractive = true;
-        
-    } else if(Input.GetKeyDown(KeyCode.X) && playeractive == true)
+         
+
+        } else if(Input.GetKeyDown(KeyCode.X) && playeractive == true)
         {
             playeractive = false;
         }

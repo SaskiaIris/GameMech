@@ -339,14 +339,7 @@ namespace TMPro
                 return m_faceColor;
             }
 
-            set
-            {
-                if (m_faceColor.Compare(value))
-                {
-                    return;
-                }
-                SetFaceColor(value); m_havePropertiesChanged = true; m_faceColor = value; SetVerticesDirty(); SetMaterialDirty();
-            }
+            set { if (m_faceColor.Compare(value)) return; SetFaceColor(value); m_havePropertiesChanged = true; m_faceColor = value; SetVerticesDirty(); SetMaterialDirty(); }
         }
         [SerializeField]
         protected Color32 m_faceColor = Color.white;

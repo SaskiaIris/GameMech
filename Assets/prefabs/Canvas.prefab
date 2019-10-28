@@ -113,7 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 273234121727480809}
-  shootingPlayer: {fileID: 0}
+  shootingPlayer: {fileID: 8789993723535330180, guid: 2070ebbb4de435c4ab5ea5d4ea9c6555,
+    type: 3}
 --- !u!1 &273234120140329421
 GameObject:
   m_ObjectHideFlags: 0

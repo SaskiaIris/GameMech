@@ -116,6 +116,7 @@
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineMixer.cs" />
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineShot.cs" />
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineTrack.cs" />
+    <Compile Include="Assets\Health.cs" />
     <Compile Include="Assets\MonsterManager.cs" />
     <Compile Include="Assets\Script\CharacterController2D.cs" />
     <Compile Include="Assets\Script\Cherry.cs" />
