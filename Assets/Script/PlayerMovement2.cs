@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement2 : MonoBehaviour
 {
@@ -52,6 +53,13 @@ public class PlayerMovement2 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("there be collision");
+            Destroy(this.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //Time.timeScale = 0f;
+        }
         if (other.gameObject.CompareTag("Coins"))
         {
             Destroy(other.gameObject);

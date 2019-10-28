@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - Turn
   - Housetut
+  - obstacle
+  - GameOver
+  - Player2
   layers:
   - Default
   - TransparentFX

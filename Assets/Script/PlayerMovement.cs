@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     public CharacterController2D controller;
     public Animator animator;
+    public MonsterManager monstermanager;
 
     public float runSpeed = 40f;
 
@@ -60,19 +61,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Coins"))
-        {
-            Destroy(other.gameObject);
-        }
        if(other.gameObject.CompareTag("Enemy"))
        {
             Debug.Log("there be collision");
-          Destroy(this.gameObject);
-            Time.timeScale = 0f;
+            Destroy(this.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //Time.timeScale = 0f;
        }
-        if (other.gameObject.CompareTag("Housetut"))
+        if (other.gameObject.CompareTag("Housetut") && monstermanager.killed == 1 )
         {
-            SceneManager.LoadScene(sceneName: "First level");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        if (other.gameObject.CompareTag("GameOver"))
+        {
+            SceneManager.LoadScene(sceneName: "Tutorial");
+            
         }
     }
 }
